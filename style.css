@@ -123,3 +123,9 @@ body{
 .row{
   overflow: hidden;
 }
+.t{
+  float: left;
+    width:  auto;
+    height: 250px;
+    object-fit:scale-down;
+}
