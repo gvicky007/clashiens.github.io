@@ -12,7 +12,7 @@ body{
     background-color: #545353;
     display: flex;  
     overflow-x: hidden;
-  
+    
 }
 
 /* webpage background */
@@ -46,6 +46,11 @@ body{
     filter: blur(20px);
     opacity: 0.5;
     z-index: -1;
+}
+marquee{
+  background-color: rgb(216, 240, 32);
+  font-size: medium;
+  font-weight: bolder;
 }
 /* navbar  */
 #navbar{
@@ -106,7 +111,7 @@ body{
   background-color: #d0bdf4;
 } */
 /*button color change */
-.active , .button-grid button:focus, .button-row button:focus{
+.button.focused, .button-row button:focus, .button-filter:focus{
   background-color: #62306b;
   color: #fff;
 }
