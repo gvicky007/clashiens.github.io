@@ -10,9 +10,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script defer src="filter.js"></script>
 </head>
 <body >
+  
   <div class="glass">
+    <div><marquee >You're welcome! Although the image and link are not yet done, we are work on to make sure that everything is completed to your satisfaction. </marquee></div>
 <!-- navbar -->
     <section class="p-2">
    
@@ -29,26 +32,58 @@
 <!-- town hall buttons -->
     <section>
       <div class="button-grid p-2">
-        <button  id="m1" class="active">TH 4</button>
-        <button  id="m2">TH 5</button>
-        <button  id="m3">TH 6</button>
-        <button  id="m4">TH 7</button>
-        <button  id="m5">TH 8</button>
-        <button  id="m6">TH 9</button>
-        <button  id="m7">TH 10</button>
-        <button  id="m8">TH 11</button>
-        <button  id="m9">TH 12</button>
-        <button  id="m10">TH 13</button>
-        <button  id="m11">TH 14</button>
-        <button  id="m12">TH 15</button>
+        <button id="m1" class="button ">TH 4</button>
+        <button id="m2" class="button">TH 5</button>
+        <button id="m3" class="button">TH 6</button>
+        <button id="m4" class="button">TH 7</button>
+        <button id="m5" class="button">TH 8</button>
+        <button id="m6" class="button">TH 9</button>
+        <button id="m7" class="button">TH 10</button>
+        <button id="m8" class="button">TH 11</button>
+        <button id="m9" class="button">TH 12</button>
+        <button id="m10" class="button">TH 13</button>
+        <button id="m11" class="button">TH 14</button>
+        <button id="m12" class="button">TH 15</button>
       </div>
+      <script>
+        const buttons = document.querySelectorAll('.button');
+        let lastClickedButton;
+    
+        buttons.forEach(button => {
+          button.addEventListener('click', () => {
+            buttons.forEach(button => {
+              button.classList.remove('focused');
+              button.blur();
+            });
+            button.classList.add('focused');
+            button.focus();
+            lastClickedButton = button;
+          });
+        });
+    
+        document.addEventListener('click', (event) => {
+          if (!event.target.closest('.button')) {
+            buttons.forEach(button => {
+              button.classList.remove('focused');
+              button.blur();
+            });
+            if (lastClickedButton) {
+              lastClickedButton.classList.add('focused');
+              lastClickedButton.focus();
+            } else {
+              buttons[0].classList.add('focused');
+              buttons[0].focus();
+            }
+          }
+        });
+      </script>
     </section>
 <!-- here is the jquery added for separate to the town hall -->
 <p style="background-color: rgb(226, 226, 164);">Note: Click the copy button to get the URL and open new tab,paste the url and you are set to go.</p>
 <section>
     <div class="show">
       <div id="content"></div>
-      <script src="filter.js"></script>
+      
     </div>
   </section>
 <!-- here is the end of the jquery code -->
@@ -62,7 +97,7 @@
   <div class="container p-4 ">
     <div class="row">
       <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-        <h4 class="text-uppercase">To Do:</h4>
+        <h4 class="text-uppercase">TO DO:</h4>
         <p>
           Explore an extensive collection of Clash of Clans town hall base links and plan your ultimate defense strategy, all while enjoying the convenience of easy navigation and a user-friendly interface.
         </p>
@@ -88,7 +123,7 @@
         <h5 class="text-uppercase">Contact</h5>
         <ul class="list-unstyled mb-0">
           <li>
-            <a href="#!" class="text-light"><img src="images/mail-part-2-svgrepo-com.svg" alt="..." height="30px" width="30px">Clashiens01@gmail.com</a>
+            <a href="#!" class="text-light"><img src="/df/images/mail-part-2-svgrepo-com.svg" alt="..." height="30px" width="30px">Clashiens01@gmail.com</a>
           </li>
         </ul>
       </div>
